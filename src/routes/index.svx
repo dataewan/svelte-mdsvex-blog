@@ -36,9 +36,4 @@
 	<title>Sapper project template</title>
 </svelte:head>
 
-# Great success!
-
-![Borat](great-success.png)
-
-
-**Try editing this file (src/routes/index.svelte) to test live reloading.**
+There's not a lot here

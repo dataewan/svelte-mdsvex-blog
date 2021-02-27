@@ -14,6 +14,8 @@
 </script>
 
 <script>
+  import "prismjs/themes/prism.css";
+  import "prismjs/themes/prism-coy.css";
 	export let post;
 </script>
 
