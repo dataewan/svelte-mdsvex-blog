@@ -14,7 +14,6 @@
   }
   
   posts = posts.sort(compare_date_desc)
-  console.log(posts)
 </script>
 
 <style>
