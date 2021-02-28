@@ -4,7 +4,7 @@ import commonjs from "@rollup/plugin-commonjs";
 import svelte from "rollup-plugin-svelte";
 import * as matter from "gray-matter";
 import {extname, join, basename} from "path";
-import {readdirSync, statSync} from "fs";
+import {readdirSync, statSync, existsSync} from "fs";
 import babel from "@rollup/plugin-babel";
 import {terser} from "rollup-plugin-terser";
 import config from "sapper/config/rollup.js";
@@ -19,17 +19,42 @@ function get_date(dataDate, filepath) {
   return new Date(statSync(filepath).ctime)
 }
 
+function read_svx(filename) {
+  const parsed = matter.read(filename)
+  const date = get_date(parsed.data.date, filename)
+  return {
+    ...parsed,
+    date: date,
+  }
+}
+
 function get_routes() {
   const blog_path = join(process.cwd(), 'src', 'routes', 'blog');
-  return readdirSync(blog_path).filter(p => extname(p) === ".svx").map(post => {
-    const filepath = join(blog_path, post)
-    let parsed = matter.read(join(blog_path, post))
+  const svx_files = readdirSync(blog_path).filter(p => extname(p) === ".svx")
+  const isDir = (d) => {
+    const stats = statSync(join(blog_path, d))
+    return stats.isDirectory()
+  }
+  const directories = readdirSync(blog_path)
+    .filter(p => isDir(p))
+    .filter(p => existsSync(join(blog_path, p, "index.svx")))
+  const svx_read = svx_files.map(post => {
+    const filename = join(blog_path, post)
+    const parsed = read_svx(filename)
     return {
       ...parsed,
-      slug: basename(post, ".svx"),
-      date: get_date(parsed.data.date, filepath)
+      slug: basename(filename, ".svx"),
     }
   })
+  const directories_read = directories.map(dir => {
+    const filename = join(blog_path, dir, "index.svx")
+    const parsed = read_svx(filename)
+    return {
+      ...parsed,
+      slug: dir,
+    }
+  })
+  return svx_read.concat(directories_read)
 }
 
 const mode = process.env.NODE_ENV;
