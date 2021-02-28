@@ -4,21 +4,30 @@ import commonjs from "@rollup/plugin-commonjs";
 import svelte from "rollup-plugin-svelte";
 import * as matter from "gray-matter";
 import {extname, join, basename} from "path";
-import {readdirSync} from "fs";
+import {readdirSync, statSync} from "fs";
 import babel from "@rollup/plugin-babel";
 import {terser} from "rollup-plugin-terser";
 import config from "sapper/config/rollup.js";
 import pkg from "./package.json";
 import {mdsvex} from "mdsvex";
 
+function get_date(dataDate, filepath) {
+  if (dataDate) {
+    return new Date(dataDate)
+  }
+
+  return new Date(statSync(filepath).ctime)
+}
 
 function get_routes() {
   const blog_path = join(process.cwd(), 'src', 'routes', 'blog');
   return readdirSync(blog_path).filter(p => extname(p) === ".svx").map(post => {
+    const filepath = join(blog_path, post)
     let parsed = matter.read(join(blog_path, post))
     return {
       ...parsed,
-      slug: basename(post, ".svx")
+      slug: basename(post, ".svx"),
+      date: get_date(parsed.data.date, filepath)
     }
   })
 }
