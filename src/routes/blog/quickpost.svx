@@ -4,3 +4,6 @@ title: Quick post
 
 This is a post that sits in isolation.
 I just made it quickly.
+
+
+![image of a pangolin](./pangolin.png)

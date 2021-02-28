@@ -1,6 +1,8 @@
 import resolve from "@rollup/plugin-node-resolve";
 import replace from "@rollup/plugin-replace";
 import commonjs from "@rollup/plugin-commonjs";
+import image from "@rollup/plugin-image";
+import copy from "rollup-plugin-copy";
 import svelte from "rollup-plugin-svelte";
 import * as matter from "gray-matter";
 import {extname, join, basename} from "path";
@@ -61,6 +63,15 @@ const mode = process.env.NODE_ENV;
 const dev = mode === "development";
 const legacy = !!process.env.SAPPER_LEGACY_BUILD;
 
+const COPY_IMAGES = {
+  targets: [
+    {src: "src/routes/**/*.png", dest: "static"},
+    {src: "src/routes/**/*.jpg", dest: "static"},
+    {src: "src/routes/**/*.gif", dest: "static"},
+    {src: "src/routes/**/*.svg", dest: "static"},
+  ]
+}
+
 const replaceConstants = {
   'process.env.NODE_ENV': JSON.stringify(mode),
   '__ROUTES__': JSON.stringify(get_routes())
@@ -92,6 +103,8 @@ export default {
         browser: true,
         dedupe: ['svelte']
       }),
+      image(),
+      copy(COPY_IMAGES),
       commonjs(),
 
       legacy &&
@@ -145,6 +158,8 @@ export default {
       resolve({
         dedupe: ['svelte']
       }),
+      image(),
+      copy(COPY_IMAGES),
       commonjs()
     ],
     external: Object.keys(pkg.dependencies).concat(require('module').builtinModules),
@@ -161,6 +176,8 @@ export default {
         "process.browser": true,
         ...replaceConstants,
       }),
+      image(),
+      copy(COPY_IMAGES),
       commonjs(),
       !dev && terser()
     ],

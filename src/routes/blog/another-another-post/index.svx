@@ -8,3 +8,5 @@ Let's see what I can do to sort these.
 ```golang
 test
 ```
+
+![swiss cube](./swisscube.png)
