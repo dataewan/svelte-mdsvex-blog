@@ -33,7 +33,7 @@
 </style>
 
 <svelte:head>
-	<title>Sapper project template</title>
+	<title>Blog title</title>
 </svelte:head>
 
 There's not a lot here
