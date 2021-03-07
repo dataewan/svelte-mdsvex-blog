@@ -1,4 +1,5 @@
 <script context="module">
+  import PostDescription from "../../components/PostDescription.svelte";
 	export function preload({ params, query }) {
 		return this.fetch(`blog.json`).then(r => r.json()).then(posts => {
 			return { posts };
@@ -14,14 +15,9 @@
   }
   
   posts = posts.sort(compare_date_desc)
+  console.log(posts)
 </script>
 
-<style>
-	ul {
-		margin: 0 0 1em 0;
-		line-height: 1.5;
-	}
-</style>
 
 <svelte:head>
 	<title>Blog</title>
@@ -29,8 +25,8 @@
 
 <h1>Recent posts</h1>
 
-<ul>
-	{#each posts as post}
-		<li><a href='blog/{post.slug}'>{post.title}</a></li>
-	{/each}
-</ul>
+{#if posts}
+  {#each posts as post}
+    <PostDescription post={post} />
+  {/each}
+{/if}

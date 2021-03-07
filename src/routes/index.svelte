@@ -36,4 +36,6 @@
 	<title>Blog title</title>
 </svelte:head>
 
-There's not a lot here
+<p>
+  There's not a lot here
+</p>

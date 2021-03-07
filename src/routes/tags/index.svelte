@@ -1,4 +1,5 @@
 <script context="module">
+  import TagDescription from "../../components/TagDescription.svelte";
   export function preload({params, query}){
     return this.fetch(`tags.json`).then(r => r.json()).then(tags => {
       return {tags}
@@ -10,8 +11,8 @@
   export let tags
 </script>
 
-<ul>
-  {#each tags as tag}
-    <li><a href="tags/{tag[0]}">{tag[1]} - {tag[0]}</a></li>
-  {/each}
-</ul>
+<h1>Tags</h1>
+
+{#each tags as tag}
+  <TagDescription tag={tag} />
+{/each}
