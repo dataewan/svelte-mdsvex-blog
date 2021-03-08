@@ -1,0 +1,30 @@
+---
+title: Tagging
+tags:
+  - tagging
+  - introduction
+  - can use spaces
+---
+
+
+This bit of front matter shows how to use tags using the yaml list format.
+
+
+```markdown
+---
+title: Tagging
+tags:
+  - tagging
+  - introduction
+  - can use spaces
+---
+
+
+This bit of front matter...
+```
+
+I've put three tags on this post --- _tagging_, _introduction_, and _can use spaces_ (yes I can!).
+I've got a component at the top of the post that shows the tags.
+Each of these tags links over to the right tag summary -- for example [tags/introduction](tags/introduction).
+
+
