@@ -16,9 +16,17 @@
 
 </script>
 
+<style>
+  article :global(img){
+    width: 100%;
+  }
+</style>
+
 <PostTitle post={post} /> 
 <PostDate post={post} />
 <PostTags post={post} />
 
-<slot>
-</slot>
+<article>
+  <slot>
+  </slot>
+</article>
