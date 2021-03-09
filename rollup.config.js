@@ -25,7 +25,7 @@ function read_svx(filename) {
   const parsed = matter.read(filename)
   const date = get_date(parsed.data.date, filename)
   return {
-    ...parsed,
+    data: parsed.data,
     date: date,
   }
 }
