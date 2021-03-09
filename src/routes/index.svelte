@@ -36,6 +36,6 @@
 	<title>Blog title</title>
 </svelte:head>
 
-<p>
-  There's not a lot here
-</p>
+<h2>Getting started</h2>
+
+<p>Head on over to <a href="blog/startingpoint">the blog section</a> to get a description for how to create posts.</p>
