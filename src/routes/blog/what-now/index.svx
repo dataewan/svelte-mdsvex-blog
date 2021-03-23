@@ -1,0 +1,11 @@
+---
+title: Now what?
+---
+
+What are the next things to do?
+
+## Remove sapper
+
+Sapper won't be continued, they're all excited about sveltekit instead.
+
+https://svelte.dev/blog/sveltekit-beta

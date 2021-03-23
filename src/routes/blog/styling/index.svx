@@ -67,3 +67,6 @@ blockquote{
 
 
 
+----
+
+Now we'll talk about [what's next](/blog/now-what) in the final section.
