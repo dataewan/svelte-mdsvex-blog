@@ -65,3 +65,9 @@ Useful for performance reasons.
 
 
 <CanvasComponent numNodes={numNodes}/>
+
+
+
+----
+
+Next: [Styling the blog](blog/styling)
