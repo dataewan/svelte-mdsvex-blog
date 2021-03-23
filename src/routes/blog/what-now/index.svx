@@ -1,5 +1,6 @@
 ---
 title: Now what?
+date: 2021-03-08
 ---
 
 What are the next things to do?

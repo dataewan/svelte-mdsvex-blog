@@ -1,5 +1,6 @@
 ---
 title: Front matter
+date: 2021-03-02
 ---
 
 # Front matter

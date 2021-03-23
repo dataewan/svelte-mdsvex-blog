@@ -2,6 +2,7 @@
 title: Directory structure and images
 tags:
   - introduction
+date: 2021-03-04
 ---
 
 All the posts until this point have been popping `.svx` files in `routes/blog`.

@@ -2,6 +2,7 @@
 title: Styling the blog
 tags:
     - introduction
+date: 2021-03-07
 ---
 
 There are a few different places to do styling:

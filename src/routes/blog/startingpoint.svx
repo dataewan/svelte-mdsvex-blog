@@ -1,5 +1,6 @@
 ---
 title: Starting off
+date: 2021-03-01
 ---
 
 Create a new file in `src/routes/blog` called `POSTNAME.svx`.

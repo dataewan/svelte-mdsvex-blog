@@ -4,6 +4,7 @@ tags:
     - components
     - d3
     - introduction
+date: 2021-03-06
 ---
 
 One thing that's exciting about svelte over other frameworks is that there's no [virtual DOM](https://reactjs.org/docs/faq-internals.html) to deal with.
