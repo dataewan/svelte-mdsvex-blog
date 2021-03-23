@@ -12,8 +12,10 @@
     return split[split.length -1 ]
   }
 
-  export let slug = getSlug($page.path)
-  export let post = posts.filter((d) => d.slug === slug)[0]
+  export let slug 
+  export let post 
+  $: slug = getSlug($page.path)
+  $: post = posts.filter((d) => d.slug === slug)[0]
 
 </script>
 
