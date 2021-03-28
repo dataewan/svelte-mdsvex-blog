@@ -27,5 +27,5 @@ You can also give it a `date` if you want to say that this post was published on
 You can use any [Javascript date format](https://www.w3schools.com/js/js_date_formats.asp) to describe the date.
 
 The other bit of front matter that I make use of just now is the `tags`.
-Which will be described in the [next section](/blog/tags).
+Which will be described in the [next section](blog/tags).
 

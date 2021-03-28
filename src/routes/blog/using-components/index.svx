@@ -77,4 +77,4 @@ Well I just type in `{count}` and there I go.
 
 Value of `value` is currently: {value}
 
-I can also use d3 for data visualisation, described in the [next section](/blog/d3-components)
+I can also use d3 for data visualisation, described in the [next section](blog/d3-components)

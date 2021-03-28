@@ -27,8 +27,8 @@ def f(x):
 ```
 
 When being served, the files will use the filename as the post slug.
-So they'll live over at `/blog/{slug}`.
+So they'll live over at `blog/{slug}`.
 
 
-In the [next section](/blog/front-matter) we'll talk about `front-matter`.
+In the [next section](blog/front-matter) we'll talk about `front-matter`.
 

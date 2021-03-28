@@ -70,4 +70,4 @@ blockquote{
 
 ----
 
-Now we'll talk about [what's next](/blog/what-now) in the final section.
+Now we'll talk about [what's next](blog/what-now) in the final section.

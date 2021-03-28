@@ -35,4 +35,4 @@ I have put my image in there, and can refer to it using standard markdown syntax
 
 
 This is going to get really useful when I start using components, which are one of the really exciting reasons to use svelte.
-We'll talk about them [next](blog/using-components)
+We'll talk about them [next](blog/using-components).
